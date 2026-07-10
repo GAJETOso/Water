@@ -72,6 +72,14 @@ export default function WaterSupplyPage() {
           </div>
           <Reveal delay={0.25}>
             <MeterDial />
+            <p className="mt-5 text-center">
+              <Link
+                href="/water-supply/my-meter"
+                className="text-sm font-semibold text-aqua-300 transition-colors hover:text-aqua-200"
+              >
+                Preview the full My Meter portal →
+              </Link>
+            </p>
           </Reveal>
         </div>
       </section>

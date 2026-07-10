@@ -13,6 +13,7 @@ Back-office application for AQUOR staff. Next.js + the platform GraphQL API.
 | Customers & CRM | Profiles, segments, loyalty adjustments, campaign triggers |
 | Custom jobs | Artwork proofs, approval queue, production scheduling |
 | CSR / Foundation | Projects, impact metric entry (with verifier), photo evidence |
+| Utility / Metering | AQUOR Flow connections pipeline (apply→survey→install→active), meter fleet health, NRW/leak analytics, tariff management, vend & billing reconciliation |
 | Quality | Lab batch results, certificate registry, expiry alerts |
 | Reports | Sales, revenue, export (CSV/XLSX), scheduled email reports |
 | System | Users & roles (RBAC), audit log viewer, notification center |

@@ -35,6 +35,7 @@ const columns = [
   {
     title: "Portals",
     links: [
+      { label: "My Meter Portal", href: "/water-supply/my-meter" },
       { label: "Distributor Portal", href: "/portals" },
       { label: "Customer Portal", href: "/portals" },
       { label: "Supplier Portal", href: "/portals" },

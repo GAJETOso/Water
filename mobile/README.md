@@ -16,7 +16,8 @@ Tab bar: Home · Order · Track · Impact · Account
 ```
 
 - **Home**: greeting, one-tap "Order again", active subscription card,
-  delivery countdown, promos.
+  delivery countdown, promos — and for AQUOR Flow customers, a meter card
+  (today's litres, token balance, one-tap top-up).
 - **Order**: catalog (six families), size/pack pickers, cart, checkout
   (Paystack/Flutterwave/Stripe SDKs, saved cards, pay-on-delivery).
 - **Track**: live order timeline, map with driver location, delivery OTP.

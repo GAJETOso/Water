@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/portals" },
 };
 
-const PORTALS = [
+const PORTALS: { name: string; detail: string; status: string; href?: string }[] = [
+  { name: "My Meter Portal", detail: "AQUOR Flow smart-meter dashboard: daily usage, token balance, top-up history and leak alerts.", status: "Live Demo", href: "/water-supply/my-meter" },
   { name: "Distributor Portal", detail: "Wholesale pricing, route planning, order pipelines, credit and rebate tracking.", status: "Login" },
   { name: "Customer Portal", detail: "Order history, delivery subscriptions, invoices, loyalty points and support tickets.", status: "Login" },
   { name: "Supplier Portal", detail: "RFQs, purchase orders, delivery schedules and payment status for our supply partners.", status: "Login" },
@@ -43,12 +44,21 @@ export default function PortalsPage() {
               <div className="glass glass-hover flex h-full flex-col rounded-2xl p-8">
                 <h3 className="font-display text-xl text-white">{portal.name}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400">{portal.detail}</p>
-                <span
-                  className="mt-6 inline-flex w-fit cursor-not-allowed items-center gap-2 rounded-full border border-aqua-300/30 px-5 py-2 text-xs font-semibold text-aqua-300/80"
-                  title="Portal apps ship with the platform backend"
-                >
-                  {portal.status} →
-                </span>
+                {portal.href ? (
+                  <Link
+                    href={portal.href}
+                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-aqua-300/50 bg-aqua-300/10 px-5 py-2 text-xs font-semibold text-aqua-300 transition-colors hover:bg-aqua-300/20"
+                  >
+                    {portal.status} →
+                  </Link>
+                ) : (
+                  <span
+                    className="mt-6 inline-flex w-fit cursor-not-allowed items-center gap-2 rounded-full border border-aqua-300/30 px-5 py-2 text-xs font-semibold text-aqua-300/80"
+                    title="Portal apps ship with the platform backend"
+                  >
+                    {portal.status} →
+                  </span>
+                )}
               </div>
             </Reveal>
           ))}

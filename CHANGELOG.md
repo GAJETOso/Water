@@ -17,6 +17,10 @@ adheres to [Semantic Versioning](https://semver.org/).
   tariffs and schemes), all PG16-validated.
 - API contracts for connections, tariffs, readings, prepaid token vending and
   postpaid bills; WhatsApp/Telegram token-vending bot flows.
+- **My Meter portal demo** (`/water-supply/my-meter`): 14-day usage chart with
+  hover tooltips and sr-only table, prepaid top-up history, leak/low-balance
+  alert feed, portal capability grid; linked from the water-supply page,
+  portals page and footer.
 
 ## [1.0.0] — 2026-07-10
 
