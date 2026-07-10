@@ -1,0 +1,8 @@
+# Default owners for everything
+*                   @GAJETOso
+
+# Domain ownership (update as the team grows)
+/frontend/          @GAJETOso
+/database/          @GAJETOso
+/infrastructure/    @GAJETOso
+/.github/           @GAJETOso

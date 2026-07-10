@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Security vulnerability
+    url: https://github.com/GAJETOso/Water/security/advisories/new
+    about: Never report security issues publicly — use private advisories or security@aquor.com.
+  - name: 💬 Questions & discussions
+    url: https://github.com/GAJETOso/Water/discussions
+    about: Ask questions and share ideas.
