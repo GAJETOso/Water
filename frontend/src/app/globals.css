@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-navy-950 text-slate-200 antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #071426;
+}
+::-webkit-scrollbar-thumb {
+  background: #0e2a52;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1b6bc0;
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  }
+  .glass-hover {
+    @apply transition-all duration-500 hover:border-aqua-300/30 hover:bg-white/[0.07] hover:shadow-[0_0_40px_rgba(56,189,248,0.15)];
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-aqua-200 via-aqua-400 to-ocean-400 bg-clip-text text-transparent;
+  }
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-400 via-gold-500 to-gold-400 bg-clip-text text-transparent;
+  }
+  .section {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-10;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.3em] text-aqua-300;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-ocean-500 to-aqua-400 px-7 py-3.5 text-sm font-semibold text-navy-950 transition-all duration-300 hover:shadow-[0_0_35px_rgba(56,189,248,0.45)] hover:brightness-110;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:border-aqua-300/50 hover:bg-white/5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
