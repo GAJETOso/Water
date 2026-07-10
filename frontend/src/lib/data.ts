@@ -14,6 +14,7 @@ export const COMPANY = {
 
 export const NAV_LINKS = [
   { label: "Products", href: "/products" },
+  { label: "Water Supply", href: "/water-supply" },
   { label: "Manufacturing", href: "/manufacturing" },
   { label: "Industries", href: "/industries" },
   { label: "Sustainability", href: "/sustainability" },
@@ -210,6 +211,74 @@ export const CERTIFICATIONS = [
   { code: "SON", name: "Standards Organisation Compliance" },
   { code: "WHO GMP", name: "Good Manufacturing Practice" },
   { code: "Export Cert.", name: "International Export Certification" },
+];
+
+export const SUPPLY_STATS = [
+  { value: 68000, suffix: "+", label: "Households connected" },
+  { value: 410, suffix: "", label: "Estates & communities served" },
+  { value: 52000, suffix: "+", label: "Smart meters deployed" },
+  { value: 99.2, suffix: "%", label: "Supply uptime (12-mo avg.)" },
+];
+
+export const SUPPLY_STEPS = [
+  {
+    step: "01",
+    title: "Apply",
+    detail:
+      "Apply online, on WhatsApp or at a service centre — as a single household, a landlord or an estate manager.",
+  },
+  {
+    step: "02",
+    title: "Survey",
+    detail:
+      "Our engineers survey your location within 48 hours and confirm network coverage, pressure zone and connection cost.",
+  },
+  {
+    step: "03",
+    title: "Connect & meter",
+    detail:
+      "We lay the service line and install an ultrasonic smart meter — prepaid or postpaid, your choice.",
+  },
+  {
+    step: "04",
+    title: "Top up & flow",
+    detail:
+      "Buy water tokens on WhatsApp, Telegram or the app in seconds; postpaid customers get itemised monthly e-bills.",
+  },
+];
+
+export const METER_FEATURES = [
+  {
+    name: "Ultrasonic Smart Meters",
+    detail: "No moving parts, ±1% accuracy for life, NB-IoT telemetry every 15 minutes.",
+  },
+  {
+    name: "Prepaid Water Tokens",
+    detail: "STS-compatible 20-digit tokens vended via WhatsApp, Telegram, app, USSD or agents.",
+  },
+  {
+    name: "Leak & Tamper Alerts",
+    detail: "Continuous-flow detection flags leaks within hours; tamper events alert both you and us.",
+  },
+  {
+    name: "Tiered Fair Tariffs",
+    detail: "A subsidised lifeline band for essential use, rising gently with consumption.",
+  },
+  {
+    name: "Estate Bulk Metering",
+    detail: "Master meters with per-unit sub-metering, landlord dashboards and automated reconciliation.",
+  },
+  {
+    name: "Quality at the Tap",
+    detail: "The same nine-stage purified water — chlorine-residual monitored across the network 24/7.",
+  },
+];
+
+export const TARIFF_TIERS = [
+  { name: "Lifeline", range: "0 – 6 m³ / month", rate: 280, note: "Subsidised essential use" },
+  { name: "Standard", range: "6 – 20 m³ / month", rate: 350, note: "Typical family home" },
+  { name: "Comfort", range: "20 – 50 m³ / month", rate: 420, note: "Large homes & gardens" },
+  { name: "Commercial", range: "50+ m³ / month", rate: 520, note: "Shops, schools, offices" },
 ];
 
 export const PRODUCTION_LINES = [

@@ -248,6 +248,84 @@ CREATE TABLE esg_reports (
     published_at timestamptz NOT NULL DEFAULT now()
 );
 
+-- ── Household water supply & smart metering (AQUOR Flow) ────────────────────
+
+CREATE TYPE connection_status AS ENUM ('applied','surveyed','installing','active','suspended','closed');
+CREATE TYPE meter_mode AS ENUM ('prepaid','postpaid');
+CREATE TYPE bill_status AS ENUM ('issued','paid','overdue','void');
+
+CREATE TABLE water_schemes (
+    id              uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    name            text NOT NULL,
+    kind            text NOT NULL DEFAULT 'municipal',   -- municipal | estate | institution | standalone
+    city            text NOT NULL,
+    commissioned_on date
+);
+
+CREATE TABLE water_connections (
+    id           uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id      uuid NOT NULL REFERENCES users(id),
+    address_id   uuid REFERENCES addresses(id),
+    scheme_id    uuid REFERENCES water_schemes(id),
+    status       connection_status NOT NULL DEFAULT 'applied',
+    applied_at   timestamptz NOT NULL DEFAULT now(),
+    activated_at timestamptz
+);
+
+CREATE TABLE water_meters (
+    id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    connection_id uuid NOT NULL REFERENCES water_connections(id),
+    serial        text UNIQUE NOT NULL,
+    kind          text NOT NULL DEFAULT 'ultrasonic',    -- ultrasonic | mechanical
+    mode          meter_mode NOT NULL DEFAULT 'prepaid',
+    installed_on  date,
+    removed_on    date                                    -- null = currently installed
+);
+
+-- High-volume IoT telemetry; readings are cumulative register values (m³).
+CREATE TABLE meter_readings (
+    id          bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    meter_id    uuid NOT NULL REFERENCES water_meters(id),
+    reading_m3  numeric(12,3) NOT NULL CHECK (reading_m3 >= 0),
+    source      text NOT NULL DEFAULT 'iot',              -- iot | manual | estimate
+    recorded_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX ON meter_readings (meter_id, recorded_at DESC);
+
+CREATE TABLE water_tariffs (
+    id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    name        text NOT NULL,                            -- lifeline | standard | comfort | commercial
+    min_m3      numeric(8,2) NOT NULL,
+    max_m3      numeric(8,2),                             -- null = unbounded top tier
+    rate_per_m3 numeric(10,2) NOT NULL,
+    currency    char(3) NOT NULL DEFAULT 'NGN',
+    effective   daterange NOT NULL
+);
+
+-- Prepaid top-ups: money in, STS-style token out.
+CREATE TABLE meter_vends (
+    id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    meter_id   uuid NOT NULL REFERENCES water_meters(id),
+    amount     numeric(12,2) NOT NULL CHECK (amount > 0),
+    volume_m3  numeric(10,3) NOT NULL,
+    token      text UNIQUE NOT NULL,
+    channel    order_channel NOT NULL DEFAULT 'whatsapp',
+    created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX ON meter_vends (meter_id, created_at DESC);
+
+-- Postpaid monthly billing.
+CREATE TABLE water_bills (
+    id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    connection_id uuid NOT NULL REFERENCES water_connections(id),
+    period        daterange NOT NULL,
+    volume_m3     numeric(10,3) NOT NULL,
+    amount        numeric(12,2) NOT NULL,
+    status        bill_status NOT NULL DEFAULT 'issued',
+    issued_at     timestamptz NOT NULL DEFAULT now(),
+    UNIQUE (connection_id, period)
+);
+
 -- ── Support & CRM ────────────────────────────────────────────────────────────
 
 CREATE TYPE ticket_status AS ENUM ('open','pending','resolved','closed');

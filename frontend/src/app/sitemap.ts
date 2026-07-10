@@ -4,6 +4,7 @@ import { COMPANY } from "@/lib/data";
 const routes = [
   "",
   "/products",
+  "/water-supply",
   "/manufacturing",
   "/industries",
   "/sustainability",

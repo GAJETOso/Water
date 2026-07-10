@@ -14,6 +14,7 @@
 - [ ] E-commerce: cart, checkout, Paystack/Flutterwave/Stripe, subscriptions
 - [ ] WhatsApp Business bot (ordering, tracking, support, distributor onboarding)
 - [ ] Telegram bot (catalog, orders, notifications, broadcast channels)
+- [ ] AQUOR Flow APIs: connection applications, tariffs, prepaid token vending
 - [ ] Customer portal (orders, invoices, loyalty)
 - [ ] Headless CMS for reports, press and knowledge center
 
@@ -24,6 +25,8 @@
 - [ ] CRM: segmentation, loyalty, automated email/SMS/WhatsApp campaigns
 - [ ] ERP integration (inventory, invoicing, production planning)
 - [ ] AI chatbot with retrieval over the knowledge base; voice assistant
+- [ ] AQUOR Flow metering platform: IoT reading ingestion, leak analytics,
+      estate sub-metering dashboards, postpaid billing engine
 - [ ] Certificate verification API with QR codes
 
 ## Phase 4 — Scale

@@ -209,6 +209,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* AQUOR Flow teaser */}
+      <section className="section pb-28">
+        <Reveal>
+          <Link
+            href="/water-supply"
+            className="glass glass-hover group relative block overflow-hidden rounded-3xl p-10 md:p-14"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-ocean-600/25 via-transparent to-aqua-400/10" />
+            <div className="relative flex flex-wrap items-center justify-between gap-8">
+              <div className="max-w-2xl">
+                <p className="eyebrow">New — AQUOR Flow</p>
+                <h2 className="mt-3 font-display text-3xl leading-tight text-white md:text-4xl">
+                  Metered water supply, <span className="text-gradient">straight to your taps</span>
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-slate-400 md:text-base">
+                  Smart-metered piped water for households and estates: prepaid tokens on WhatsApp,
+                  tiered fair tariffs, leak alerts, and the same nine-stage purity — 68,000+
+                  households already connected.
+                </p>
+              </div>
+              <span className="btn-primary shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                Explore AQUOR Flow <span aria-hidden>→</span>
+              </span>
+            </div>
+          </Link>
+        </Reveal>
+      </section>
+
       {/* Foundation / impact */}
       <section className="relative pb-28">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/5 to-transparent" />

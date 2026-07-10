@@ -15,6 +15,8 @@ Customer service, ordering and community engagement on Telegram.
 | `/events` | Custom-bottle event orders (weddings, conferences…) |
 | `/promo` | Current promotions & coupon redemption |
 | `/feedback` | Structured feedback collection (rating + comment) |
+| `/token` | Buy prepaid water tokens for AQUOR Flow meters |
+| `/meter` | Consumption history, balance and leak alerts per meter |
 | `/support` | AI Q&A → human handoff |
 | `/invoice` | Resend invoice PDFs for past orders |
 

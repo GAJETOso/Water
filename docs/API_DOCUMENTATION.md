@@ -71,6 +71,31 @@ Order lifecycle: `pending → confirmed → in_production? → dispatched → de
 | GET | `/foundation/impact` | Impact dashboard series (km dredged, boreholes, WQI…) |
 | GET | `/reports` | Published reports (PDF URLs, checksums) |
 
+## Water supply & metering (AQUOR Flow)
+
+| Method | Path | Description |
+|---|---|---|
+| POST | `/water-supply/applications` | Apply for a household/estate connection |
+| GET | `/water-supply/connections/{id}` | Connection status, meter, balance |
+| GET | `/water-supply/tariffs` | **Public** tiered tariff table |
+| GET | `/meters/{serial}/readings?from=&to=` | Consumption series (owner or estate manager) |
+| POST | `/meters/{serial}/vend` | Buy a prepaid token; amount → volume at current tier |
+| GET | `/water-supply/connections/{id}/bills` | Postpaid bills with status |
+
+```jsonc
+// POST /meters/AQF-004211/vend  { "amount": 5000, "channel": "whatsapp" } → 201
+{
+  "token": "1846 2201 9934 5510 0827",
+  "volume_m3": 13.51,
+  "tier_applied": "standard",
+  "meter": "AQF-004211",
+  "expires": null
+}
+```
+
+Metering telemetry (IoT ingest) uses a separate authenticated ingestion
+endpoint with per-device keys — not part of the public API.
+
 ## Distributors
 
 | Method | Path | Description |

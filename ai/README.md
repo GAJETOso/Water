@@ -21,6 +21,7 @@ One assistant brain serving the website chatbot, WhatsApp and Telegram.
 | `ordering.md` | Channels, delivery zones, payment methods, refunds |
 | `custom-bottles.md` | Occasions, MOQs, artwork specs, proof & production timelines |
 | `distributors.md` | Requirements, margins policy, application steps |
+| `water-supply.md` | AQUOR Flow connections, smart meters, tokens, tariffs, leak alerts |
 | `quality.md` | Purification stages, lab testing, certifications, batch traceability |
 | `sustainability.md` | Recycling, buyback, stewardship, Foundation programs & stats |
 | `company.md` | History, facilities, markets, leadership, careers |

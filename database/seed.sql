@@ -51,6 +51,18 @@ INSERT INTO certificates (code, standard, issuer, scope, issued_on, expires_on) 
   ('AQR-FSSC-2024-0311',     'FSSC 22000 v6',  'DNV',      'Lagos & Abuja plants',           '2024-09-01', '2027-08-31'),
   ('AQR-NAFDAC-2026-0001',   'NAFDAC Registration', 'NAFDAC', 'All product lines',           '2026-01-01', '2030-12-31');
 
+-- Water supply (AQUOR Flow)
+INSERT INTO water_schemes (id, name, kind, city, commissioned_on) VALUES
+  ('f0000000-0000-0000-0000-000000000001', 'Lekki Phase 1 Network',   'municipal',   'Lagos', '2023-05-01'),
+  ('f0000000-0000-0000-0000-000000000002', 'Emerald Gardens Estate',  'estate',      'Abuja', '2024-08-15'),
+  ('f0000000-0000-0000-0000-000000000003', 'St. Mary Teaching Hospital', 'institution', 'Enugu', '2025-02-01');
+
+INSERT INTO water_tariffs (name, min_m3, max_m3, rate_per_m3, currency, effective) VALUES
+  ('lifeline',   0,  6,    280, 'NGN', daterange('2026-01-01', NULL)),
+  ('standard',   6,  20,   350, 'NGN', daterange('2026-01-01', NULL)),
+  ('comfort',    20, 50,   420, 'NGN', daterange('2026-01-01', NULL)),
+  ('commercial', 50, NULL, 520, 'NGN', daterange('2026-01-01', NULL));
+
 -- Foundation projects + impact
 INSERT INTO foundation_projects (id, name, program, state, community, started_on, completed_on, summary) VALUES
   ('e0000000-0000-0000-0000-000000000001', 'Ogun River Dredging Phase II', 'dredging',    'Ogun',  'Abeokuta North', '2024-02-01', '2024-11-30', '42 km dredged; flood incidence down 61%.'),

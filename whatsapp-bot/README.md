@@ -58,6 +58,20 @@ Free-text issues get an AI answer from the knowledge base first;
 "AGENT" or two failed answers → human handoff with full transcript.
 Complaints create tickets with number returned in-chat.
 
+### 7. Water token vending (AQUOR Flow prepaid meters)
+```
+User: "buy water" / TOKEN
+Bot:  Which meter? [AQF-004211 — Home] [AQF-009832 — Shop] [Enter another]
+User: AQF-004211
+Bot:  How much? [₦2,000] [₦5,000] [₦10,000] [Other]
+User: ₦5,000
+Bot:  [Payment link] ✅ Paid. Your token:
+      1846 2201 9934 5510 0827  (13.5 m³ at Standard tier)
+      Enter it on the meter keypad. Balance alerts arrive here automatically.
+```
+Also: low-balance push alerts (opt-in), leak alerts ("continuous flow for 6h —
+check for an open tap"), and connection application status updates.
+
 ## Message types used
 
 Interactive lists, reply buttons, product catalog messages, location request,

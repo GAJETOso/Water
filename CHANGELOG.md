@@ -6,6 +6,18 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- **AQUOR Flow — metered household water supply**: `/water-supply` page with
+  animated smart-meter gauge, connection journey, smart-metering features,
+  tiered tariff table and estate/institution solutions; homepage teaser and
+  nav/footer/sitemap wiring; `Service` JSON-LD and piped-water FAQ entry.
+- Database: `water_schemes`, `water_connections`, `water_meters`,
+  `meter_readings`, `water_tariffs`, `meter_vends`, `water_bills` (+ seed
+  tariffs and schemes), all PG16-validated.
+- API contracts for connections, tariffs, readings, prepaid token vending and
+  postpaid bills; WhatsApp/Telegram token-vending bot flows.
+
 ## [1.0.0] — 2026-07-10
 
 ### Added

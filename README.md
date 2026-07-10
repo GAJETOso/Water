@@ -37,6 +37,7 @@ A cinematic, Apple-grade marketing and commerce experience:
 - **Animated hero** — live canvas water simulation, parallax scroll, staged type reveals
 - **Complete value chain** — source → purify → bottle → verify → deliver → renew, fully animated
 - **Every product category** — sachet, PET (330ml–18.9L), dispenser, premium glass, customized bottles, specialty hydration
+- **AQUOR Flow** — metered household & estate water supply: smart-meter dashboard, prepaid token vending, tiered tariffs
 - **Digital factory** — SCADA-style live production dashboard, six-stage line walkthrough
 - **Sustainability ecosystem** — circular plastic, water stewardship, community projects
 - **Water Dredging Foundation** — CSR portal with animated impact dashboards (km dredged, boreholes, water-quality trends)

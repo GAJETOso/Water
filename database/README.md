@@ -35,6 +35,13 @@ erDiagram
     plants ||--o{ production_snapshots : reports
     plants ||--o{ lab_batches : tests
 
+    users ||--o{ water_connections : applies
+    water_schemes ||--o{ water_connections : groups
+    water_connections ||--o{ water_meters : "metered by"
+    water_meters ||--o{ meter_readings : streams
+    water_meters ||--o{ meter_vends : "topped up by"
+    water_connections ||--o{ water_bills : billed
+
     foundation_projects ||--o{ impact_metrics : measures
 ```
 
@@ -51,6 +58,10 @@ erDiagram
   `custom_job_status`) — invalid states are unrepresentable.
 - **`production_snapshots` and `lab_batches` are read models** fed by MES/SCADA
   and LIMS; the factory systems remain the source of truth.
+- **Metering (`meter_readings`) stores cumulative register values**, not deltas —
+  consumption is derived, so late/out-of-order IoT packets never corrupt totals.
+  Prepaid `meter_vends` and postpaid `water_bills` are separate tables because
+  their lifecycles (instant token vs. monthly cycle) share nothing but the meter.
 - **`impact_metrics` uses `daterange` periods** so quarterly and annual
   aggregations don't require schema changes; `verified_by` records the auditor.
 - **`audit_logs`** capture actor, entity, JSON diff and IP for NDPR/GDPR

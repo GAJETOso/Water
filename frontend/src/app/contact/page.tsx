@@ -71,6 +71,14 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "Does AQUOR supply piped water to homes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. AQUOR Flow supplies metered piped water to households, estates and institutions using ultrasonic smart meters. Customers choose prepaid water tokens (vended via WhatsApp, Telegram, app or agents) or postpaid monthly billing on tiered tariffs.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Does AQUOR deliver dispenser water to homes and offices?",
       acceptedAnswer: {
         "@type": "Answer",

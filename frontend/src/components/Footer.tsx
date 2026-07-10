@@ -11,6 +11,7 @@ const columns = [
       { label: "Premium & Glass", href: "/products#premium" },
       { label: "Customized Bottles", href: "/products#custom" },
       { label: "Specialty Hydration", href: "/products#specialty" },
+      { label: "Household Water Supply", href: "/water-supply" },
     ],
   },
   {
