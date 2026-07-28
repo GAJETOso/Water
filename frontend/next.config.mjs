@@ -8,7 +8,9 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
-  output: "standalone",
+  // "standalone" for the Docker image; NEXT_OUTPUT=export produces the static
+  // ./out folder used by the GitHub Pages deploy workflow (nextjs.yml).
+  output: process.env.NEXT_OUTPUT === "export" ? "export" : "standalone",
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
