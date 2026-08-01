@@ -65,7 +65,7 @@ jobs:
           NEXT_OUTPUT: export
           NEXT_TELEMETRY_DISABLED: "1"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: frontend/out
 
