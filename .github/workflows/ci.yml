@@ -20,7 +20,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:
@@ -63,7 +63,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Apply schema + seed
         run: |
           psql "postgresql://postgres:postgres@localhost:5432/aquor" -v ON_ERROR_STOP=1 -f database/schema.sql
