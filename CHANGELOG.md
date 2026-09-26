@@ -8,6 +8,11 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
+- **Corporate statements**: Vision, Mission and Brand Promise cards plus five
+  signed policy statements (Quality, Food Safety, Environmental &
+  Sustainability, HSE, Community Commitment) on the About page, sourced from
+  `lib/data.ts`.
+
 - **AQUOR Flow — metered household water supply**: `/water-supply` page with
   animated smart-meter gauge, connection journey, smart-metering features,
   tiered tariff table and estate/institution solutions; homepage teaser and

@@ -12,6 +12,37 @@ export const COMPANY = {
   url: "https://www.aquor.com",
 };
 
+export const STATEMENTS = {
+  vision:
+    "A continent where every person drinks with absolute confidence — where world-class water is not a luxury, but a daily certainty.",
+  mission:
+    "To purify, bottle and deliver exceptional water at every price point — from the ₦50 sachet to the crystal decanter — through relentless quality, intelligent technology and a circular economy that returns more to Africa's watersheds than we draw.",
+  promise: "Pure beyond measure. Every bottle, every tap, every time.",
+};
+
+export const POLICIES = [
+  {
+    name: "Quality Policy",
+    text: "Every drop passes nine purification stages and 60+ laboratory parameters before release. We operate ISO 9001 and ISO 22000 certified management systems, measure ourselves against the world's strictest benchmarks, and treat every customer complaint as a defect of the system — not the customer.",
+  },
+  {
+    name: "Food Safety Policy",
+    text: "Water is food. We maintain HACCP and FSSC 22000 disciplines across every facility: validated critical control points, full batch traceability from borehole to bottle, and the authority for any employee to stop any line, at any time, on any doubt.",
+  },
+  {
+    name: "Environmental & Sustainability Policy",
+    text: "We are committed to circular packaging (62% rPET by 2030), water stewardship that recharges more groundwater than we abstract, 100% renewable electricity by 2032, and a science-aligned Net Zero pathway by 2045 — reported publicly, audited independently.",
+  },
+  {
+    name: "Health, Safety & Environment Policy",
+    text: "Zero harm is not a target; it is a condition of operating. Every task is risk-assessed, every incident investigated to root cause, and no production goal ever outranks the safety of our people, contractors and host communities.",
+  },
+  {
+    name: "Community Commitment",
+    text: "Through the AQUOR Water Dredging Foundation we restore waterways, prevent floods, drill boreholes and bring clean water to underserved communities — because a water company's licence to operate is written by the communities that share its watershed.",
+  },
+];
+
 export const NAV_LINKS = [
   { label: "Products", href: "/products" },
   { label: "Water Supply", href: "/water-supply" },

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import Counter from "@/components/Counter";
+import { POLICIES, STATEMENTS } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About AQUOR",
@@ -41,6 +42,37 @@ export default function AboutPage() {
             description="Twenty-eight years of engineering, logistics and stubborn belief that every African deserves world-class water."
           />
         </div>
+      </section>
+
+      {/* Vision · Mission · Promise */}
+      <section className="section pb-24">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <Reveal>
+            <div className="glass glass-hover h-full rounded-3xl p-10">
+              <p className="eyebrow">Our Vision</p>
+              <p className="mt-5 font-display text-2xl leading-snug text-white md:text-3xl">
+                {STATEMENTS.vision}
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <div className="glass glass-hover h-full rounded-3xl p-10">
+              <p className="eyebrow">Our Mission</p>
+              <p className="mt-5 text-lg leading-relaxed text-slate-300">{STATEMENTS.mission}</p>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal delay={0.2} className="mt-6">
+          <div className="glass relative overflow-hidden rounded-3xl p-10 text-center md:p-12">
+            <div className="absolute inset-0 bg-hero-radial" />
+            <div className="relative">
+              <p className="eyebrow">Our Promise</p>
+              <p className="text-gradient mx-auto mt-4 max-w-3xl font-display text-3xl leading-snug md:text-4xl">
+                &ldquo;{STATEMENTS.promise}&rdquo;
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="section pb-24">
@@ -88,9 +120,34 @@ export default function AboutPage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Policy statements */}
+      <section className="section pb-28">
+        <SectionHeading
+          eyebrow="Our Commitments"
+          title="The policies we answer to"
+          description="Signed by the Managing Director, displayed in every facility, and audited against — these statements govern how AQUOR operates."
+          align="left"
+        />
+        <div className="mt-10 space-y-4">
+          {POLICIES.map((policy, i) => (
+            <Reveal key={policy.name} delay={i * 0.06}>
+              <div className="glass glass-hover rounded-2xl p-8 md:flex md:gap-10">
+                <h3 className="font-display text-xl text-white md:w-64 md:shrink-0">
+                  {policy.name}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-400 md:mt-0">{policy.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
         <Reveal className="mt-14 flex flex-wrap justify-center gap-4">
           <Link href="/manufacturing" className="btn-primary">
             See How We Make Water
+          </Link>
+          <Link href="/certifications" className="btn-ghost">
+            Our Certifications
           </Link>
           <Link href="/portals" className="btn-ghost">
             Careers at AQUOR
